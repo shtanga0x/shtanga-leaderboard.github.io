@@ -86,8 +86,9 @@ async function processParticipant(
   console.log(`\n👤 Processing: ${participant.nickname} (${participant.wallet})`);
 
   // Step 1: Fetch and store deposits from chain
+  const startBlock = parseInt(process.env.START_BLOCK || '0', 10);
   const deposits = await retryWithBackoff(async () => {
-    const transfers = await chainService.fetchDepositsWithTimestamps(participant.wallet);
+    const transfers = await chainService.fetchDepositsWithTimestamps(participant.wallet, startBlock);
     return transfers.map((t) =>
       chainService.transferToDeposit(t, participant.id, participant.wallet)
     );
