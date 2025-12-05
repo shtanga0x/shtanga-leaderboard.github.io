@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "jest",
-    "migrate": "node -r dotenv/config dist/migrations/run.js",
+    "migrate": "tsx migrations/run.ts",
     "refresh": "tsx scripts/refresh_leaderboard.ts"
   },
   "keywords": [],
