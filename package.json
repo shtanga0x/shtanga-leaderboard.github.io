@@ -1,0 +1,23 @@
+{
+  "name": "polymarket-leaderboard",
+  "version": "1.0.0",
+  "description": "Polymarket Tournament Leaderboard - Full Stack Application",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "migrate": "cd backend && npm run migrate",
+    "refresh": "cd backend && npm run refresh",
+    "test": "cd backend && npm test"
+  },
+  "keywords": ["polymarket", "leaderboard", "blockchain", "ethereum", "polygon"],
+  "author": "",
+  "license": "MIT"
+}
